@@ -1,0 +1,64 @@
+{
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "beforeBuildCommand": "npm run build",
+    "devPath": "http://localhost:1420",
+    "distDir": "../dist",
+    "withGlobalTauri": false
+  },
+  "package": {
+    "productName": "tauri-react-tasks",
+    "version": "0.0.0"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": false,
+      "shell": {
+        "all": false,
+        "open": true
+      },
+      "dialog": {
+        "message": true,
+        "save": true,
+        "confirm": true
+      },
+      "path": {
+        "all": true
+      },
+      "fs": {
+        "readFile": true,
+        "removeFile": true,
+        "writeFile": true,
+        "readDir": true,
+        "scope": ["$DOCUMENT/*", "$DESKTOP/**/**"]
+      }
+    },
+    "bundle": {
+      "active": true,
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico"
+      ],
+      "identifier": "com.tauri.dev",
+      "targets": "all"
+    },
+    "security": {
+      "csp": null
+    },
+    "updater": {
+      "active": false
+    },
+    "windows": [
+      {
+        "fullscreen": false,
+        "resizable": true,
+        "title": "Snippet Manager",
+        "width": 1100,
+        "height": 700 
+      }
+    ]
+  }
+}
